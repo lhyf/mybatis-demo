@@ -57,11 +57,11 @@ public class MyBatisTest {
 	 * 			2）、每个select标签都有useCache="true"：
 	 * 					false：不使用缓存（一级缓存依然使用，二级缓存不使用）
 	 * 			3）、【每个增删改标签的：flushCache="true"：（一级二级都会清除）】
-	 * 					增删改执行完成后就会清楚缓存；
+	 * 					增删改执行完成后就会清除缓存；
 	 * 					测试：flushCache="true"：一级缓存就清空了；二级也会被清除；
 	 * 					查询标签：flushCache="false"：
 	 * 						如果flushCache=true;每次查询之后都会清空缓存；缓存是没有被使用的；
-	 * 			4）、sqlSession.clearCache();只是清楚当前session的一级缓存；
+	 * 			4）、sqlSession.clearCache();只是清除当前session的一级缓存；
 	 * 			5）、localCacheScope：本地缓存作用域：（一级缓存SESSION）；当前会话的所有数据保存在会话缓存中；
 	 * 								STATEMENT：可以禁用一级缓存；		
 	 * 				

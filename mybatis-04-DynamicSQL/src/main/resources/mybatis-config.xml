@@ -18,6 +18,7 @@
 			value：设置项取值
 	 -->
 	<settings>
+		<setting name="useActualParamName" value="true"/>
 		<setting name="mapUnderscoreToCamelCase" value="true"/>
 		<setting name="jdbcTypeForNull" value="NULL"/>
 		

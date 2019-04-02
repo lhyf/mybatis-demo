@@ -15,6 +15,8 @@
 	 <select id="getEmpsByConditionIf" resultType="org.lhyf.mybatis.bean.Employee">
 	 	select * from tbl_employee
 	 	<!-- where -->
+	 	<!--where 元素只会在至少有一个子元素的条件返回 SQL 子句的情况下才去插入“WHERE”子句。
+	 	而且，若语句的开头为“AND”或“OR”，where 元素也会将它们去除。 -->
 	 	<where>
 		 	<!-- test：判断表达式（OGNL）
 		 	OGNL参照PPT或者官方文档。
@@ -97,6 +99,8 @@
 	 <!--public void updateEmp(Employee employee);  -->
 	 <update id="updateEmp">
 	 	<!-- Set标签的使用 -->
+	 	<!--这里，set 元素会动态前置 SET 关键字，同时也会删掉无关的逗号，因为用了条件语句之后很可能就会在生成的 SQL
+	 	语句的后面留下这些逗号。(因为用的是“if”元素，若最后一个“if”没有匹配上而前面的匹配上，SQL 语句的最后就会有一个逗号遗留) -->
 	 	update tbl_employee 
 		<set>
 			<if test="lastName!=null">

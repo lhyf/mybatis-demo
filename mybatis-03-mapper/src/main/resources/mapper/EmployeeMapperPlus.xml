@@ -11,7 +11,7 @@
 	<resultMap type="org.lhyf.mybatis.bean.Employee" id="MySimpleEmp">
 		<!--指定主键列的封装规则
 		id定义主键会底层有优化；
-		column：指定哪一列
+		column：指定表中的哪一列
 		property：指定对应的javaBean属性
 		  -->
 		<id column="id" property="id"/>
@@ -91,7 +91,7 @@
 	 		
 	 		流程：使用select指定的方法（传入column指定的这列参数的值）查出对象，并封装给property指定的属性
 	 	 -->
- 		<association property="dept" 
+ 		<association property="dept" fetchType="lazy"
 	 		select="org.lhyf.mybatis.dao.DepartmentMapper.getDeptById"
 	 		column="d_id">
  		</association>

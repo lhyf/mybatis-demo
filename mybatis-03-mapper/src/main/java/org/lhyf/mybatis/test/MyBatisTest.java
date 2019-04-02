@@ -33,7 +33,6 @@ import java.util.Map;
  * 					将sql抽取出来。	
  * 
  * 
- * @author lfy
  *
  */
 public class MyBatisTest {

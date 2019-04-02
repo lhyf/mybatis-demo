@@ -7,8 +7,15 @@
 		1、mybatis可以使用properties来引入外部properties配置文件的内容；
 		resource：引入类路径下的资源
 		url：引入网络路径或者磁盘路径下的资源
+
+		配置读取顺序,下层配置覆盖上层配置
+		- 在 properties 元素体内指定的属性首先被读取。
+		- 然后根据 properties 元素中的 resource 属性读取类路径下属性文件或根据 url 属性指定的路径读取属性文件，并覆盖已读取的同名属性。
+		- 最后读取作为方法参数传递的属性，并覆盖已读取的同名属性。
 	  -->
-	<properties resource="dbconfig.properties"></properties>
+	<properties resource="dbconfig.properties" url="www.lhyf.org/config/db.properties">
+		<property name="username" value="root"></property>
+	</properties>
 	
 	
 	<!-- 
@@ -83,6 +90,9 @@
 		 type="DB_VENDOR"：VendorDatabaseIdProvider
 		 	作用就是得到数据库厂商的标识(驱动getDatabaseProductName())，mybatis就能根据数据库厂商标识来执行不同的sql;
 		 	MySQL，Oracle，SQL Server,xxxx
+
+		 MyBatis 会加载不带 databaseId 属性和带有匹配当前数据库 databaseId 属性的所有语句。
+		 如果同时找到带有 databaseId 和不带 databaseId 的相同语句，则后者会被舍弃。
 	  -->
 	<databaseIdProvider type="DB_VENDOR">
 		<!-- 为不同的数据库厂商起别名 -->
@@ -97,7 +107,7 @@
 	<mappers>
 		<!-- 
 			mapper:注册一个sql映射 
-				注册配置文件
+				注册配置文件(EmployeeMapper.xml)
 				resource：引用类路径下的sql映射文件
 					mybatis/mapper/EmployeeMapper.xml
 				url：引用网路路径或者磁盘路径下的sql映射文件
