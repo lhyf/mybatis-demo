@@ -123,6 +123,7 @@
 		-->
 		<!-- <mapper resource="mybatis/mapper/EmployeeMapper.xml"/> -->
 		<!-- <mapper class="org.lhyf.mybatis.dao.EmployeeMapperAnnotation"/> -->
+		<!--<mapper url="http://www.lhyf.org/config/EmployeeMapper.xml"/>-->
 		
 		<!-- 批量注册： -->
 		<package name="org.lhyf.mybatis.dao"/>

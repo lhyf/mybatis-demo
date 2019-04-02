@@ -11,8 +11,7 @@ resultType：返回值类型
 
 public Employee getEmpById(Integer id);
  -->
-	<select id="getEmpById" resultType="org.lhyf.mybatis.bean.Employee"
-		>
+	<select id="getEmpById" resultType="org.lhyf.mybatis.bean.Employee" >
 		select id,last_name lastName,email,gender from tbl_employee where id = #{id}
 	</select>
 </mapper>
