@@ -4,6 +4,12 @@
  "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+
+    <settings>
+        <setting name="defaultExecutorType" value="SIMPLE"/>
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
 	<!--<typeAliases>-->
 		<!--<typeAlias type="org.lhyf.mybatis.dao.EmployeeMapper" alias="emp"/>-->
 		<!--<package name="org.lhyf.mybatis.dao"/>-->

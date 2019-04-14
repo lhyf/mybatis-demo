@@ -11,7 +11,8 @@ resultType：返回值类型
 
 public Employee getEmpById(Integer id);
  -->
-	<select id="getEmpById" resultType="org.lhyf.mybatis.bean.Employee" >
+	<!--STATEMENT，PREPARED 或 CALLABLE 中的一个。这会让 MyBatis 分别使用 Statement，PreparedStatement 或 CallableStatement，默认值：PREPARED。-->
+	<select id="getEmpById" resultType="org.lhyf.mybatis.bean.Employee" statementType="STATEMENT">
 		select id,last_name lastName,email,gender from tbl_employee where id = #{id}
 	</select>
 </mapper>

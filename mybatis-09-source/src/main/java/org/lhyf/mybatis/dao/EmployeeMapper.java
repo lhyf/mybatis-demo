@@ -5,6 +5,7 @@ import org.lhyf.mybatis.bean.Employee;
 
 public interface EmployeeMapper {
 	
-	public Employee getEmpById(Integer id);
+	Employee getEmpById(Object id);
+	Employee getEmpById(String id);
 
 }

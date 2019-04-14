@@ -64,13 +64,13 @@ public class MyBatisTest {
 			// 3、获取接口的实现类对象
 			//会为接口自动的创建一个代理对象，代理对象去执行增删改查方法
 			EmployeeMapper mapper = openSession.getMapper(EmployeeMapper.class);
+			System.out.println(mapper.getClass());
 			Employee employee = mapper.getEmpById(1);
 			System.out.println(mapper);
 			System.out.println(employee);
 		} finally {
 			openSession.close();
 		}
-
 	}
 
 }
